@@ -23,6 +23,6 @@ You have been asked to implement a __REST API__ that allows its consumers to cre
 
 ### Delivery of your solution
 
-Please, fork this repository and implement your solution on the fork repo. Once you are happy with your solution please email us the link to your solution. 
+Fork this repository and implement your solution on the fork. Once you are happy with your solution, please email us the link to your fork.
 
 
