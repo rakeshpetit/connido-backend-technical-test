@@ -29,7 +29,7 @@ Getting up and running is as easy as 1, 2, 3 and 4.
 Simply run `npm test` and all your tests in the `test/` directory will be run.
 
 
-#API call for user creation
+**API call for user creation**
 
 $.ajax({  
             type: "POST",  
@@ -46,7 +46,7 @@ $.ajax({
             }  
         });
 
-#API call for user authentication
+**API call for user authentication**
 
 $.ajax({  
             type: "POST",  
@@ -61,7 +61,7 @@ $.ajax({
             }  
         });    
 
-#API call to get articles
+**API call to get articles**
 
 $.ajax({  
             type: "GET",  
@@ -71,7 +71,7 @@ $.ajax({
             }  
         });
 
-#API call to get articles with pagination where articles from 6 through 15 are fetched - Pagination
+**API call to get articles with pagination where articles from 6 through 15 are fetched - Pagination**
 
 $.ajax({  
             type: "GET",  
@@ -81,7 +81,7 @@ $.ajax({
             }  
         });      
 
-#API call to get articles by author
+**API call to get articles by author**
 
 $.ajax({  
             type: "GET",  
@@ -91,7 +91,7 @@ $.ajax({
             }  
         }); 
 
-#API call to get articles by title
+**API call to get articles by title**
 
 $.ajax({  
             type: "GET",  
@@ -101,7 +101,7 @@ $.ajax({
             }  
         });
 
-#API call to get articles by author and title
+**API call to get articles by author and title**
 
 $.ajax({  
             type: "GET",  
@@ -111,7 +111,7 @@ $.ajax({
             }  
         });
 
-#API call to post articles where token generated in authentication call to be passed
+**API call to post articles where token generated in authentication call to be passed**
 
 let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1YmFjOTNhM2U5ZjVlYjJiZTAwMTkzYjAiLCJpYXQiOjE1MzgwMzg3ODIsImV4cCI6MTUzODEyNTE4MiwiYXVkIjoiaHR0cHM6Ly9jb25uaW5kby5jb20iLCJpc3MiOiJyYWtlc2giLCJzdWIiOiJhbm9ueW1vdXMiLCJqdGkiOiJhZDJjYjk5Mi03OGQ1LTQxNzktYTgwOS0zZGY4ZmNiNTU0NWMifQ.cJjl6u0kSyQhJ2OILcRNAkenhGYXqtT3pWkgnY8QJQY';
 
@@ -129,38 +129,35 @@ $.ajax({
   beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + token); }  
         });    
 
-#API call to update articles
+**API call to update articles where token generated in authentication call to be passed**
 
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1YmFjOTNhM2U5ZjVlYjJiZTAwMTkzYjAiLCJpYXQiOjE1MzgwMzg3ODIsImV4cCI6MTUzODEyNTE4MiwiYXVkIjoiaHR0cHM6Ly9jb25uaW5kby5jb20iLCJpc3MiOiJyYWtlc2giLCJzdWIiOiJhbm9ueW1vdXMiLCJqdGkiOiJhZDJjYjk5Mi03OGQ1LTQxNzktYTgwOS0zZGY4ZmNiNTU0NWMifQ.cJjl6u0kSyQhJ2OILcRNAkenhGYXqtT3pWkgnY8QJQY';
 
 $.ajax({  
-            type: "POST",  
-            url: "http://localhost:3030/articles",
+            type: "PUT",  
+            url: "http://localhost:3030/articles/5bacc4ab2222d82a2c1ef50b",
             data: {
-  title: 'My Post',
-  content: 'This is my first Post',
+  title: 'My modified Post',
+  content: 'This is my modified Post',
   author: 'Rakesh'
 },  
             success: function(dataString) { 
-                console.log('Post articles success'); 
+                console.log('Update articles success'); 
             },            
   beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + token); }  
         }); 
 
-#API call to delete articles
+**API call to delete articles where token generated in authentication call to be passed**
 
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1YmFjOTNhM2U5ZjVlYjJiZTAwMTkzYjAiLCJpYXQiOjE1MzgwMzg3ODIsImV4cCI6MTUzODEyNTE4MiwiYXVkIjoiaHR0cHM6Ly9jb25uaW5kby5jb20iLCJpc3MiOiJyYWtlc2giLCJzdWIiOiJhbm9ueW1vdXMiLCJqdGkiOiJhZDJjYjk5Mi03OGQ1LTQxNzktYTgwOS0zZGY4ZmNiNTU0NWMifQ.cJjl6u0kSyQhJ2OILcRNAkenhGYXqtT3pWkgnY8QJQY';
 
 $.ajax({  
-            type: "POST",  
-            url: "http://localhost:3030/articles",
+            type: "DELETE",  
+            url: "http://localhost:3030/articles/5bacc4ab2222d82a2c1ef50b",
             data: {
-  title: 'My Post',
-  content: 'This is my first Post',
-  author: 'Rakesh'
 },  
             success: function(dataString) { 
-                console.log('Post articles success'); 
+                console.log('Delete articles success'); 
             },            
   beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + token); }  
         });   
